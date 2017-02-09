@@ -2,13 +2,15 @@
 
 Is a simple CSV parser that compares two columns of data and reports whether the second column has entries that are not found in the first column, as well as whether there is more than one match for a particular entry in the second column
 
-For example, given the following .csv with these two columns of data
+For example, given the following .csv with these two columns of data:
 
 ![Sample CSV](https://github.com/starmandeluxe/starmandeluxe.github.io/blob/master/img/sample_csv.PNG)
 
-The program will output on the page
+
+The program will output on the page:
 
 ![Sample Output](https://github.com/starmandeluxe/starmandeluxe.github.io/blob/master/img/sample_result.PNG?raw=true)
+
 
 
 ## How To Use
