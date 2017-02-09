@@ -16,9 +16,13 @@ The program will output on the page:
 ## How To Use
 
 Step 1. Open it up
+
 Step 2. Click the "Browse" button and choose a .csv file prepared with two columns of data (it will only read the first two columns)
+
 Step 3. The analysis will start automatically and the results will show in the well area below
+
 Step 4. That's all there is. You can click Browse again to choose a different .csv to restart the analysis.
+
 
 ## Future Enhancements
  - Nicer error messages on screen
