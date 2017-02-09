@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="findmissing.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <style>
+            .top-buffer { margin-top:20px; }
+        </style>
+    <head>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Find Duplicate/Missing Elements in Column 1 compared to Column 2</h1>
+            </div>
+        </div>
+        <div class="row top-buffer">
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                <h4>Choose CSV File</h4>
+            </div>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <label class="input-group-btn">
+                        <span class="btn btn-primary">
+                            Browse&hellip; <input id="csvFile" type="file" style="display: none;" multiple>
+                        </span>
+                    </label>
+                    <input id="fname" type="text" class="form-control" readonly>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <div class="row top-buffer">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div id="results" class="well well-lg"></div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</html>
