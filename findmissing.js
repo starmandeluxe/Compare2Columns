@@ -50,6 +50,7 @@ $( document ).ready(function() {
                     var r = new FileReader();
 
                     r.onload = function (e) {
+                        var anomaliesFound = false;
                         var csvArray = CSVToArray(e.target.result);
                         var hashTable = {};
 
@@ -61,25 +62,45 @@ $( document ).ready(function() {
 
                         for (var i = 0; i < csvArray.length; i++)
                         {
-                            hashTable[csvArray[i][0]] = 1;
+                            if ((csvArray[i].length < 2 && csvArray[i][0].trim() === ""))
+                            {
+                                console.log("no data pair in row " + i);
+                            }
+                            else
+                            {
+                                hashTable[csvArray[i][0]] = 1;
+                            }
                         }
 
                         for (var i = 0; i < csvArray.length; i++)
                         {
-                            if (hashTable[csvArray[i][1]] === 2)
+                            if ((csvArray[i].length < 2 && csvArray[i][0].trim() === ""))
                             {
-                                $('#results').append("<p>" + "Duplicate Value Found in Column 2: " + csvArray[i][1] + "</p>");
-                            }
-                            else if (hashTable[csvArray[i][1]] !== 1)
-                            {
-                                $('#results').append("<p>" + "Missing Value Found in Column 2: " + csvArray[i][1] + "</p>");
+                                console.log("no data pair in row " + i);
                             }
                             else
                             {
-                                hashTable[csvArray[i][1]] += 1;
+                                if (hashTable[csvArray[i][1]] === 2)
+                                {
+                                    $('#results').append("<p>" + "Duplicate Value Found in Column 2: " + csvArray[i][1] + "</p>");
+                                    anomaliesFound = true;
+                                }
+                                else if (hashTable[csvArray[i][1]] !== 1)
+                                {
+                                    $('#results').append("<p>" + "Missing Value Found in Column 2: " + csvArray[i][1] + "</p>");
+                                    anomaliesFound = true;
+                                }
+                                else
+                                {
+                                    hashTable[csvArray[i][1]] += 1;
+                                }
                             }
                         }
                         $('#results').append("<p>Finished Analyzing CSV</p>");
+                        if (anomaliesFound == false)
+                        {
+                            $('#results').append("<p>Both columns contain matching data!</p>");
+                        }
                     };
                     r.readAsText(e.target.files[0]);
                     $('#csvControls').show();
