@@ -4,7 +4,7 @@ Is a simple CSV parser that compares two columns of data and reports whether the
 
 For example, given the following .csv with these two columns of data
 
-![Sample CSV](starmandeluxe.github.io/blob/master/img/sample_csv.PNG)
+![Sample CSV](starmandeluxe.github.com/starmandeluxe.github.com/img/image.jpg)
 
 ## How To Use
 
